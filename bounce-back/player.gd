@@ -14,3 +14,6 @@ func get_input() -> void:
 
 func _on_shield_area_entered(area: Area2D) -> void:
 	print("Shield hit!")
+func _ready() -> void:
+	add_to_group("player")
+	
