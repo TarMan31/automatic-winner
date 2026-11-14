@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3ks3gh15thqk" path="res://hat-player.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://bhitgq4dggc2n" path="res://shield_pivot.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cwv2xu1gh0wxp" path="res://stit.png" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://cphn24h1pf2r7" path="res://discord_notif.mp3" id="5_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfegk"]
 radius = 46.010868
@@ -51,6 +52,10 @@ sync_to_physics = false
 position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_o1sgd")
 disabled = true
+
+[node name="OdrazeniSurikenu" type="AudioStreamPlayer2D" parent="." unique_id=1683769424]
+stream = ExtResource("5_sweqy")
+volume_db = -8.668
 
 [connection signal="area_entered" from="ShieldPivot/Shield" to="." method="_on_shield_area_entered"]
 [connection signal="body_shape_entered" from="ShieldPivot/Shield" to="." method="_on_shield_body_shape_entered"]
