@@ -11,3 +11,7 @@ func _physics_process(delta: float) -> void:
 
 func aim_at(target_position: Vector2) -> void:
 	direction = global_position.direction_to(target_position)
+	
+	
+func bounce_back(new_direction: Vector2) -> void:
+	direction = new_direction.normalized()
