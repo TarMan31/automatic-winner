@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwv2xu1gh0wxp" path="res://stit.png" id="4_hqtel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfegk"]
-radius = 47.0
+radius = 46.010868
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
 size = Vector2(14, 99)
@@ -22,7 +22,6 @@ texture = ExtResource("2_i3pqv")
 shape = SubResource("CircleShape2D_dfegk")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=684779385]
-enabled = false
 
 [node name="ShieldPivot" type="Node2D" parent="." unique_id=2039895686]
 script = ExtResource("3_i3pqv")

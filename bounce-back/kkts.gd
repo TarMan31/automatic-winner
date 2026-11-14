@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 			if narazeni.is_in_group("player"):
 				queue_free()
 				return
-			print(narazeni.name)
 
 
 func _on_timer_timeout() -> void:
