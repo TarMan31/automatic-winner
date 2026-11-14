@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5dket68terbq"]
+
+[ext_resource type="Texture2D" uid="uid://dn5fkyo2wgpd6" path="res://arena1.png" id="1_5tbud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksr2h"]
+size = Vector2(811.75, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg5d3"]
+size = Vector2(814, 51)
+
+[node name="bckrnd" type="Sprite2D" unique_id=1229267126]
+z_index = -10
+texture = ExtResource("1_5tbud")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1151700216]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=12178788]
+position = Vector2(-561.875, -240.5)
+shape = SubResource("RectangleShape2D_ksr2h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=467364096]
+position = Vector2(-563, -525.5)
+shape = SubResource("RectangleShape2D_eg5d3")
