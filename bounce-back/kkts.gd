@@ -28,9 +28,10 @@ func _physics_process(delta: float) -> void:
 			if narazeni.name == "ShieldBlocker":
 				bounce_from_shield(narazeni.global_position)
 			if narazeni.is_in_group("player"):
+				narazeni.take_damage(100)
 				queue_free()
 				return
-
+			
 
 
 func _on_timer_timeout() -> void:
@@ -38,7 +39,6 @@ func _on_timer_timeout() -> void:
 	
 	if player == null or bullet_scene == null:
 		return
-
 	var bullet = bullet_scene.instantiate() as Area2D
 	get_tree().current_scene.add_child(bullet)
 	bullet.global_position = global_position

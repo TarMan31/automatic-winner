@@ -15,3 +15,11 @@ func aim_at(target_position: Vector2) -> void:
 	
 func bounce_back(new_direction: Vector2) -> void:
 	direction = new_direction.normalized()
+	
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.take_damage(50)
+		queue_free()

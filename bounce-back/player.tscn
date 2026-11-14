@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://3ks3gh15thqk" path="res://hat-player.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://bhitgq4dggc2n" path="res://shield_pivot.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cwv2xu1gh0wxp" path="res://stit.png" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://b4imkypyckrsv" path="res://zivoty.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://8onr0rlwqig6" path="res://deathscreen.tscn" id="6_2hs0m"]
 [ext_resource type="AudioStream" uid="uid://cphn24h1pf2r7" path="res://discord_notif.mp3" id="5_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfegk"]
-radius = 46.010868
+radius = 15.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
-size = Vector2(14, 99)
+size = Vector2(11, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1sgd"]
 size = Vector2(4, 61)
@@ -19,13 +21,14 @@ size = Vector2(4, 61)
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=235819095]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.0964497, 0.091260165)
 texture = ExtResource("2_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=117251923]
 shape = SubResource("CircleShape2D_dfegk")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=684779385]
+zoom = Vector2(2.5, 2.5)
 
 [node name="ShieldPivot" type="Node2D" parent="." unique_id=2039895686]
 script = ExtResource("3_i3pqv")
@@ -34,15 +37,24 @@ script = ExtResource("3_i3pqv")
 position = Vector2(60, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldPivot/Shield" unique_id=1702755622]
-position = Vector2(3, 0.5)
+position = Vector2(-38.5, -1)
 shape = SubResource("RectangleShape2D_dfegk")
 
 [node name="Sprite2D" type="Sprite2D" parent="ShieldPivot/Shield" unique_id=928766602]
-position = Vector2(1.5264926, 0.99948543)
+position = Vector2(-39, 0)
 rotation = 1.5704592
-scale = Vector2(2.1121264, 1.9747988)
+scale = Vector2(0.81726617, 1.0952322)
 texture = ExtResource("4_hqtel")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=771766479]
+
+[node name="Zivoty" parent="CanvasLayer" unique_id=805787082 instance=ExtResource("5_sweqy")]
+offset_left = 900.0
+offset_top = 20.0
+offset_right = 1100.0
+offset_bottom = 40.0
+
+[node name="deathscreen" parent="." unique_id=1034895485 instance=ExtResource("6_2hs0m")]
 [node name="ShieldBlocker" type="AnimatableBody2D" parent="ShieldPivot/Shield" unique_id=503645464]
 collision_layer = 3
 collision_mask = 0
