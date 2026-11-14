@@ -35,3 +35,9 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		mrtvej.show_death()
 		
+	
+
+
+func _on_shield_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.has_method("bounce_from_shield"):
+		body.call("bounce_from_shield", global_position)
