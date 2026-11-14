@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b4imkypyckrsv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3flt4"]
+bg_color = Color(0.54, 0.54, 0.54, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eg5d3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.99607843, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1cy1"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="ProgressBar" unique_id=805787082]
+custom_minimum_size = Vector2(200, 20)
+offset_left = 934.0
+offset_top = 32.0
+offset_right = 1134.0
+offset_bottom = 52.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3flt4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eg5d3")
+value = 50.0
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="." unique_id=1953998979]
+z_index = -1
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 202.0
+offset_bottom = 22.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a1cy1")

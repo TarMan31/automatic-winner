@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://8onr0rlwqig6"]
+
+[ext_resource type="Script" uid="uid://b2uw2axbw8dth" path="res://deathscreen.gd" id="1_5mq0c"]
+[ext_resource type="Texture2D" uid="uid://dlquijgdyxq3e" path="res://deathscreen.png" id="1_ftl74"]
+[ext_resource type="AudioStream" uid="uid://co7ai24pcqnfp" path="res://35f4997a-677c-4e79-a2b8-f33b688d5233.mp3" id="3_0ajwu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oth28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fso35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksr2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1cy1"]
+
+[node name="deathscreen" type="CanvasLayer" unique_id=1034895485]
+process_mode = 3
+layer = 10
+visible = false
+script = ExtResource("1_5mq0c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=460332630]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ftl74")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="." unique_id=2023323410]
+offset_left = 270.0
+offset_top = 361.0
+offset_right = 892.0
+offset_bottom = 482.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oth28")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fso35")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ksr2h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a1cy1")
+
+[node name="faah" type="AudioStreamPlayer2D" parent="." unique_id=1572960822]
+stream = ExtResource("3_0ajwu")
