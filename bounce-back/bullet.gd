@@ -1,7 +1,13 @@
 extends Area2D
 
-var speed : float = 300.0
-var direction : Vector2 = Vector2.ZERO   # nastaví ji ten, kdo střílí
+@export var speed: float = 400.0
+
+var direction: Vector2 = Vector2.RIGHT
+
 
 func _physics_process(delta: float) -> void:
-	position += direction * speed * delta
+	global_position += direction * speed * delta
+
+
+func aim_at(target_position: Vector2) -> void:
+	direction = global_position.direction_to(target_position)

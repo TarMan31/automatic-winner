@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://ytqxs36g85id"]
 
-[ext_resource type="PackedScene" uid="uid://ijvanygsajej" path="res://bullet.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://ijvanygsajej" path="res://bullet.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dofxdfux0o1sd" path="res://kkts.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://cdsjkd5esksys" path="res://kkts.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cn1vk2bpqjajd" path="res://player.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=608802758]
 
-[node name="Player" parent="." unique_id=619150300 instance=ExtResource("1_ig7tw")]
-
-[node name="Node2D" parent="." unique_id=2086213890 instance=ExtResource("2_0xm2m")]
 [node name="kkts" parent="." unique_id=1608607457 instance=ExtResource("2_0xm2m")]
-position = Vector2(291, 85)
-script = ExtResource("3_h2yge")
+position = Vector2(600, 300)
+
+[node name="Player" parent="." unique_id=619150300 instance=ExtResource("4_1bvp3")]
+position = Vector2(200, 300)
