@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dofxdfux0o1sd"]
+
+[ext_resource type="Texture2D" uid="uid://mf762yccrnup" path="res://cactusmuj.png" id="2_r0upf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg5d3"]
+size = Vector2(54, 104.000015)
+
+[node name="kkts" type="CharacterBody2D" unique_id=1608607457]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679437144]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(1.6875, 2.2916667)
+texture = ExtResource("2_r0upf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=272271106]
+position = Vector2(-3, 0.99999976)
+scale = Vector2(1, 0.99999994)
+shape = SubResource("RectangleShape2D_eg5d3")

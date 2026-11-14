@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://ytqxs36g85id"]
 
 [ext_resource type="PackedScene" uid="uid://cn1vk2bpqjajd" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dofxdfux0o1sd" path="res://kkts.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cdsjkd5esksys" path="res://kkts.gd" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=608802758]
 
 [node name="Player" parent="." unique_id=619150300 instance=ExtResource("1_ig7tw")]
+
+[node name="kkts" parent="." unique_id=1608607457 instance=ExtResource("2_0xm2m")]
+position = Vector2(291, 85)
+script = ExtResource("3_h2yge")
