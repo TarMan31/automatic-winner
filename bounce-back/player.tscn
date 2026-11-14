@@ -27,7 +27,7 @@ enabled = false
 [node name="ShieldPivot" type="Node2D" parent="." unique_id=2039895686]
 script = ExtResource("3_i3pqv")
 
-[node name="Shield" type="AnimatableBody2D" parent="ShieldPivot" unique_id=822114455]
+[node name="Shield" type="Area2D" parent="ShieldPivot" unique_id=822114455]
 position = Vector2(60, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldPivot/Shield" unique_id=1702755622]
@@ -35,12 +35,9 @@ position = Vector2(3, 0.5)
 shape = SubResource("RectangleShape2D_dfegk")
 
 [node name="Sprite2D" type="Sprite2D" parent="ShieldPivot/Shield" unique_id=928766602]
-position = Vector2(-1.9073486e-06, 0.99999976)
-scale = Vector2(0.12890622, 0.625)
-texture = ExtResource("1_4flbx")
-
-[connection signal="area_entered" from="ShieldPivot/Shield" to="." method="_on_shield_area_entered"]
 position = Vector2(1.5264926, 0.99948543)
 rotation = 1.5704592
 scale = Vector2(2.1121264, 1.9747988)
 texture = ExtResource("4_hqtel")
+
+[connection signal="area_entered" from="ShieldPivot/Shield" to="." method="_on_shield_area_entered"]
