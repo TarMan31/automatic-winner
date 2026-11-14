@@ -49,6 +49,6 @@ func bounce_from_shield(shield_position: Vector2) -> void:
 	if stit_cekani > 0.0:
 		return
 
-	stit_cekani = 0.8
+	stit_cekani = 0.35
 	cas_knockbacku = 0.2
 	smer_knockbacku = (global_position - shield_position).normalized()

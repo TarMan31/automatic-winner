@@ -21,7 +21,7 @@ func _on_shield_area_entered(area: Area2D) -> void:
 	if area.has_method("bounce_back"):
 		var new_direction = (get_global_mouse_position() - global_position).normalized()
 		area.call("bounce_back", new_direction)
-	
+		$OdrazeniSurikenu.play()
 	
 func _ready() -> void:
 	add_to_group("player")

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwv2xu1gh0wxp" path="res://stit.png" id="4_hqtel"]
 [ext_resource type="PackedScene" uid="uid://b4imkypyckrsv" path="res://zivoty.tscn" id="5_sweqy"]
 [ext_resource type="PackedScene" uid="uid://8onr0rlwqig6" path="res://deathscreen.tscn" id="6_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://cphn24h1pf2r7" path="res://discord_notif.mp3" id="5_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfegk"]
 radius = 15.0
@@ -63,6 +64,10 @@ sync_to_physics = false
 position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_o1sgd")
 disabled = true
+
+[node name="OdrazeniSurikenu" type="AudioStreamPlayer2D" parent="." unique_id=1683769424]
+stream = ExtResource("5_sweqy")
+volume_db = -8.668
 
 [connection signal="area_entered" from="ShieldPivot/Shield" to="." method="_on_shield_area_entered"]
 [connection signal="body_shape_entered" from="ShieldPivot/Shield" to="." method="_on_shield_body_shape_entered"]
