@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dofxdfux0o1sd"]
 
+[ext_resource type="Script" uid="uid://cdsjkd5esksys" path="res://kkts.gd" id="1_6fh86"]
+[ext_resource type="PackedScene" uid="uid://ijvanygsajej" path="res://bullet.tscn" id="2_eu881"]
 [ext_resource type="Texture2D" uid="uid://mf762yccrnup" path="res://cactusmuj.png" id="2_r0upf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg5d3"]
 size = Vector2(54, 104.000015)
 
 [node name="kkts" type="CharacterBody2D" unique_id=1608607457]
+script = ExtResource("1_6fh86")
+bullet_scene = ExtResource("2_eu881")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679437144]
 position = Vector2(0, 9.536743e-07)
@@ -16,3 +20,9 @@ texture = ExtResource("2_r0upf")
 position = Vector2(-3, 0.99999976)
 scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_eg5d3")
+
+[node name="Timer" type="Timer" parent="." unique_id=794816817]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

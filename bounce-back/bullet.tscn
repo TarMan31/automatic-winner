@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ijvanygsajej"]
+
+[ext_resource type="Texture2D" uid="uid://dt1sne6vqqpfm" path="res://shuriken.png" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://b1te1e6woaab7" path="res://bullet.gd" id="1_v8qja"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfegk"]
+
+[node name="Bullet" type="Area2D" unique_id=558523283]
+script = ExtResource("1_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1777817027]
+texture = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2017813168]
+shape = SubResource("CircleShape2D_dfegk")
