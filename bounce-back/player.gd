@@ -21,3 +21,8 @@ func _on_shield_area_entered(area: Area2D) -> void:
 func _ready() -> void:
 	add_to_group("player")
 	
+
+
+func _on_shield_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.has_method("bounce_from_shield"):
+		body.call("bounce_from_shield", global_position)
