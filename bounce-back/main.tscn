@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cn1vk2bpqjajd" path="res://player.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cc3idt7xeivcf" path="res://cactuskulatej.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://8i2hu0ohgg6v" path="res://cactusmujskztickou.png" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cd2apsojkm67y" path="res://start.tscn" id="5_kek77"]
 [ext_resource type="AudioStream" uid="uid://by00hrcpv7qhm" path="res://mexican_sound.mp3" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
-radius = 5.357147
-height = 25.0
 radius = 8.928574
 height = 39.285706
 
@@ -27,6 +26,8 @@ position = Vector2(-742, -348)
 
 [node name="Node2D" parent="." unique_id=1587759662 instance=ExtResource("3_7mycd")]
 
+[node name="Node2D2" parent="." unique_id=1962741572 instance=ExtResource("5_kek77")]
+
 [node name="kkts2" parent="." unique_id=1973053176 instance=ExtResource("2_0xm2m")]
 position = Vector2(-199, -365)
 speed = 150.0
@@ -34,11 +35,6 @@ max_zivoty = 6
 
 [node name="Sprite2D" parent="kkts2" index="0" unique_id=1679437144]
 position = Vector2(8.000015, -2)
-texture = ExtResource("4_lquwl")
-
-[node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(8, 3.9999995)
-position = Vector2(7, 0)
 texture = ExtResource("4_lquwl")
 
 [node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]

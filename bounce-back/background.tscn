@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c8igyey7o7ye5"]
 
+[ext_resource type="Script" uid="uid://dce1teshnlvi1" path="res://background.gd" id="1_bpugw"]
 [ext_resource type="Texture2D" uid="uid://b3uavu3a4oebq" path="res://animacebrana/zavreno.png" id="1_eq6nc"]
 [ext_resource type="Texture2D" uid="uid://ctkdd3b7y6cml" path="res://animacebrana/zavreno2.png" id="2_bpugw"]
 [ext_resource type="Texture2D" uid="uid://dq50rxry7ipuw" path="res://animacebrana/zavreno3.png" id="3_gjjrj"]
@@ -41,7 +42,11 @@ size = Vector2(3, 70)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fso35"]
 size = Vector2(5, 52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oth28"]
+size = Vector2(63.75, 4.5)
+
 [node name="Node2D" type="StaticBody2D" unique_id=1587759662]
+script = ExtResource("1_bpugw")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=593557546]
 z_index = 1
@@ -92,3 +97,8 @@ shape = SubResource("RectangleShape2D_a1cy1")
 [node name="zmizejicikolize" type="CollisionShape2D" parent="." unique_id=730511201]
 position = Vector2(-8.5, -342)
 shape = SubResource("RectangleShape2D_fso35")
+
+[node name="novakolize" type="CollisionShape2D" parent="." unique_id=1316760455]
+position = Vector2(-39.125, -368)
+shape = SubResource("RectangleShape2D_oth28")
+disabled = true
