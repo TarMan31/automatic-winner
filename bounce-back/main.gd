@@ -29,7 +29,6 @@ func _on_win_zone_body_entered(body: Node2D) -> void:
 
 	if oblast != 1 or not brana_otevrena:
 		return
-
 	if kaktus_scena == null:
 		push_error("Není nastavená scéna kaktusu!")
 		return
