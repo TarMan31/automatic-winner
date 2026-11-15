@@ -15,7 +15,7 @@ radius = 5.357147
 height = 28.571411
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xspls"]
-size = Vector2(10.75, 150)
+size = Vector2(57.375, 150)
 
 [node name="Main" type="Node2D" unique_id=608802758]
 script = ExtResource("1_5vw27")
@@ -75,7 +75,7 @@ shape = SubResource("RectangleShape2D_xspls")
 [node name="WinZone" type="Area2D" parent="." unique_id=1913850522]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=237451858]
-position = Vector2(679, -349)
+position = Vector2(702.3125, -349)
 shape = SubResource("RectangleShape2D_xspls")
 
 [node name="WinUI" type="CanvasLayer" parent="." unique_id=1311931148]
