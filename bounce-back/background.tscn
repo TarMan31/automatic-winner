@@ -30,13 +30,16 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_vvxqx")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"otevreni",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1cy1"]
 size = Vector2(3, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fso35"]
+size = Vector2(5, 52)
 
 [node name="Node2D" type="StaticBody2D" unique_id=1587759662]
 
@@ -85,3 +88,7 @@ shape = SubResource("RectangleShape2D_a1cy1")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="." unique_id=521949103]
 position = Vector2(-8, -403)
 shape = SubResource("RectangleShape2D_a1cy1")
+
+[node name="zmizejicikolize" type="CollisionShape2D" parent="." unique_id=730511201]
+position = Vector2(-8.5, -342)
+shape = SubResource("RectangleShape2D_fso35")
