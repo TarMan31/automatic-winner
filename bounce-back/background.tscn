@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://c8igyey7o7ye5"]
+
+[ext_resource type="Texture2D" uid="uid://b3uavu3a4oebq" path="res://animacebrana/zavreno.png" id="1_eq6nc"]
+[ext_resource type="Texture2D" uid="uid://ctkdd3b7y6cml" path="res://animacebrana/zavreno2.png" id="2_bpugw"]
+[ext_resource type="Texture2D" uid="uid://dq50rxry7ipuw" path="res://animacebrana/zavreno3.png" id="3_gjjrj"]
+[ext_resource type="Texture2D" uid="uid://bccye8g2rr11k" path="res://animacebrana/otevreno.png" id="4_vvxqx"]
+[ext_resource type="Texture2D" uid="uid://dyypdqw43uqwh" path="res://arena2.png" id="5_cdpnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksr2h"]
+size = Vector2(58, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg5d3"]
+size = Vector2(20, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq6nc"]
+size = Vector2(1557.5, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oth28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eq6nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bpugw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gjjrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vvxqx")
+}],
+"loop": 1,
+"name": &"otevreni",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1cy1"]
+size = Vector2(3, 70)
+
+[node name="Node2D" type="StaticBody2D" unique_id=1587759662]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=593557546]
+z_index = 1
+position = Vector2(-32, -422)
+shape = SubResource("RectangleShape2D_ksr2h")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=2040487348]
+z_index = 1
+position = Vector2(-32, -264)
+shape = SubResource("RectangleShape2D_ksr2h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=706881923]
+position = Vector2(-805, -342)
+shape = SubResource("RectangleShape2D_eg5d3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=369186754]
+position = Vector2(745, -348)
+shape = SubResource("RectangleShape2D_eg5d3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=391882059]
+position = Vector2(-34.75, -264)
+shape = SubResource("RectangleShape2D_eq6nc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=601425374]
+position = Vector2(-35, -422)
+shape = SubResource("RectangleShape2D_eq6nc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886418976]
+z_index = -1
+position = Vector2(-33, -343)
+sprite_frames = SubResource("SpriteFrames_oth28")
+animation = &"otevreni"
+frame_progress = 0.656367
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732948846]
+z_index = -2
+position = Vector2(-5, 0)
+texture = ExtResource("5_cdpnt")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="." unique_id=1203499316]
+position = Vector2(-8.5, -287)
+shape = SubResource("RectangleShape2D_a1cy1")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="." unique_id=521949103]
+position = Vector2(-8, -403)
+shape = SubResource("RectangleShape2D_a1cy1")
