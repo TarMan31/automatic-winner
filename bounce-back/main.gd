@@ -10,7 +10,6 @@ func _ready() -> void:
 		kaktus.connect("kaktus_zabity", _on_kaktus_zabity)
 func _on_kaktus_zabity() -> void:
 	zbyva_kaktusu -= 1
-	if zbyva_kaktusu == 0:
 	
 	if zbyva_kaktusu == 0:
 		brana_otevrena = true	
@@ -19,5 +18,5 @@ func _on_kaktus_zabity() -> void:
 
 func _on_win_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and brana_otevrena:
-		$WinUI/YouWin.show()
+		$WinUI.show()
 		get_tree().set_deferred("paused", true)
