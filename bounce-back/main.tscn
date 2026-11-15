@@ -9,23 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://cd2apsojkm67y" path="res://start.tscn" id="5_kek77"]
 [ext_resource type="AudioStream" uid="uid://by00hrcpv7qhm" path="res://mexican_sound.mp3" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
-[ext_resource type="Texture2D" uid="uid://cr00tf847j27r" path="res://you_win.png" id="9_kek77"]
-[ext_resource type="Texture2D" uid="uid://ku6stj7u16wm" path="res://you_win.png" id="9_kek77"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
 radius = 5.357147
 height = 28.571411
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xspls"]
-size = Vector2(23.5, 150)
-radius = 8.928574
-height = 39.285706
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
-size = Vector2(83.5, 142.75)
+size = Vector2(10.75, 150)
 
 [node name="Main" type="Node2D" unique_id=608802758]
 script = ExtResource("1_5vw27")
+kaktus_scena = ExtResource("2_0xm2m")
 
 [node name="kkts" parent="." unique_id=1608607457 instance=ExtResource("2_0xm2m")]
 position = Vector2(-295, -327)
@@ -49,7 +43,6 @@ position = Vector2(8.000015, -2)
 texture = ExtResource("4_lquwl")
 
 [node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(8, 4.9999995)
 position = Vector2(7, 3.9999995)
 scale = Vector2(1.12, 0.55999994)
 shape = SubResource("CapsuleShape2D_h2yge")
@@ -73,9 +66,15 @@ autoplay = true
 [node name="EnemyDeathSound" type="AudioStreamPlayer2D" parent="." unique_id=753086451]
 stream = ExtResource("7_272bh")
 
-[node name="WinZone" type="Area2D" parent="." unique_id=662013323]
+[node name="GateZone" type="Area2D" parent="." unique_id=662013323]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=2137391883]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GateZone" unique_id=2137391883]
+position = Vector2(-4.375, -345)
+shape = SubResource("RectangleShape2D_xspls")
+
+[node name="WinZone" type="Area2D" parent="." unique_id=1913850522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=237451858]
 position = Vector2(679, -349)
 shape = SubResource("RectangleShape2D_xspls")
 
@@ -85,23 +84,17 @@ shape = SubResource("RectangleShape2D_xspls")
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
-[node name="WinZone" type="Area2D" parent="." unique_id=2052839701]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=1276469720]
-position = Vector2(709, -344)
-shape = SubResource("RectangleShape2D_dfegk")
+[node name="Spawn2A" type="Marker2D" parent="." unique_id=1479959458]
+position = Vector2(209, -371)
 
-[node name="WinUI" type="CanvasLayer" parent="." unique_id=1305352859]
-layer = 10
+[node name="Spawn2B" type="Marker2D" parent="." unique_id=179562818]
+position = Vector2(386, -315)
 
-[node name="YouWin" type="TextureRect" parent="WinUI" unique_id=529054343]
-visible = false
-offset_right = 1115.0
-offset_bottom = 648.0
-texture = ExtResource("9_kek77")
-expand_mode = 1
-stretch_mode = 5
+[node name="Spawn2C" type="Marker2D" parent="." unique_id=833886443]
+position = Vector2(273, -332)
 
+[connection signal="body_entered" from="GateZone" to="." method="_on_win_zone_body_entered"]
 [connection signal="body_entered" from="WinZone" to="." method="_on_win_zone_body_entered"]
 
 [editable path="kkts2"]
