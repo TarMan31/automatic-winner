@@ -4,16 +4,22 @@ extends CharacterBody2D
 
 @export var speed: float = 50
 @export var rychlost_strely: float = 400
+@export var max_zivoty: int = 3
+var zivoty: int
 
 var stit_cekani: float = 0.0
 var cas_knockbacku: float = 0.0
 var smer_knockbacku: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	add_to_group("enemy")
+	zivoty = max_zivoty
+	
 func _physics_process(delta: float) -> void:
 	stit_cekani = maxf(0.0, stit_cekani - delta)
 	if cas_knockbacku > 0.0:
 		cas_knockbacku -= delta
-		velocity = smer_knockbacku * 200.0
+		velocity = smer_knockbacku * 400.0
 		move_and_slide()
 		return
 
@@ -49,6 +55,15 @@ func bounce_from_shield(shield_position: Vector2) -> void:
 	if stit_cekani > 0.0:
 		return
 
-	stit_cekani = 0.35
-	cas_knockbacku = 0.2
+	stit_cekani = 0.25
+	cas_knockbacku = 0.25
 	smer_knockbacku = (global_position - shield_position).normalized()
+
+func bum_zasah() -> void:
+	zivoty -= 1
+
+	if zivoty <= 0:
+		var zvuk = get_tree().current_scene.get_node_or_null("EnemyDeathSound")
+		if zvuk:
+			zvuk.play()
+		queue_free()
