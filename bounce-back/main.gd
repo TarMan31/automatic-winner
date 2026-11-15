@@ -7,7 +7,5 @@ func _ready() -> void:
 		kaktus.connect("kaktus_zabity", _on_kaktus_zabity)
 func _on_kaktus_zabity() -> void:
 	zbyva_kaktusu -= 1
-	print("Zbývá kaktusů: ", zbyva_kaktusu)
 	if zbyva_kaktusu == 0:
-		print("Vsichni kaktusi jsou mrtvi!")
 		vsichni_kaktusove_zabiti.emit()

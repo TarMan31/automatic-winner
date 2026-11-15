@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var mrtvej = $deathscreen
 
 var health: int = max_zivoty
+var checkpos: Vector2
 
 @onready var zivotyted: ProgressBar = $CanvasLayer/Zivoty
 func _physics_process(_delta: float) -> void:
@@ -27,11 +28,11 @@ func _ready() -> void:
 	add_to_group("player")
 	zivotyted.max_value = max_zivoty
 	zivotyted.value = health
+	checkpos = global_position
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int)-> void:
 	health -= amount
 	zivotyted.value = health
-	print("Zdraví: ", health)
 	if health <= 0:
 		mrtvej.show_death()
 		
