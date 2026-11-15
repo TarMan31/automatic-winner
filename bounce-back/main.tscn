@@ -8,12 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://8i2hu0ohgg6v" path="res://cactusmujskztickou.png" id="5_7mycd"]
 [ext_resource type="AudioStream" uid="uid://by00hrcpv7qhm" path="res://mexican_sound.mp3" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://cr00tf847j27r" path="res://you_win.png" id="9_kek77"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
 radius = 5.357147
-height = 25.0
-radius = 8.928574
-height = 39.285706
+height = 28.571411
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xspls"]
+size = Vector2(23.5, 150)
 
 [node name="Main" type="Node2D" unique_id=608802758]
 script = ExtResource("1_5vw27")
@@ -26,6 +28,7 @@ rychlost_strely = 600.0
 position = Vector2(-742, -348)
 
 [node name="Node2D" parent="." unique_id=1587759662 instance=ExtResource("3_7mycd")]
+position = Vector2(0, -6)
 
 [node name="kkts2" parent="." unique_id=1973053176 instance=ExtResource("2_0xm2m")]
 position = Vector2(-199, -365)
@@ -37,12 +40,7 @@ position = Vector2(8.000015, -2)
 texture = ExtResource("4_lquwl")
 
 [node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(8, 3.9999995)
-position = Vector2(7, 0)
-texture = ExtResource("4_lquwl")
-
-[node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(7, 3.9999995)
+position = Vector2(8, 4.9999995)
 scale = Vector2(1.12, 0.55999994)
 shape = SubResource("CapsuleShape2D_h2yge")
 
@@ -64,6 +62,24 @@ autoplay = true
 
 [node name="EnemyDeathSound" type="AudioStreamPlayer2D" parent="." unique_id=753086451]
 stream = ExtResource("7_272bh")
+
+[node name="WinZone" type="Area2D" parent="." unique_id=662013323]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=2137391883]
+position = Vector2(679, -349)
+shape = SubResource("RectangleShape2D_xspls")
+
+[node name="WinUI" type="CanvasLayer" parent="." unique_id=1311931148]
+
+[node name="YouWin" type="TextureRect" parent="WinUI" unique_id=1153423289]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_kek77")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="body_entered" from="WinZone" to="." method="_on_win_zone_body_entered"]
 
 [editable path="kkts2"]
 [editable path="kkts3"]
