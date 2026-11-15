@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://by00hrcpv7qhm" path="res://mexican_sound.mp3" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://cr00tf847j27r" path="res://you_win.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://ku6stj7u16wm" path="res://you_win.png" id="9_kek77"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
 radius = 5.357147
@@ -19,6 +20,9 @@ height = 28.571411
 size = Vector2(23.5, 150)
 radius = 8.928574
 height = 39.285706
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfegk"]
+size = Vector2(83.5, 142.75)
 
 [node name="Main" type="Node2D" unique_id=608802758]
 script = ExtResource("1_5vw27")
@@ -81,6 +85,19 @@ shape = SubResource("RectangleShape2D_xspls")
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+[node name="WinZone" type="Area2D" parent="." unique_id=2052839701]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=1276469720]
+position = Vector2(709, -344)
+shape = SubResource("RectangleShape2D_dfegk")
+
+[node name="WinUI" type="CanvasLayer" parent="." unique_id=1305352859]
+layer = 10
+
+[node name="YouWin" type="TextureRect" parent="WinUI" unique_id=529054343]
+visible = false
+offset_right = 1115.0
+offset_bottom = 648.0
 texture = ExtResource("9_kek77")
 expand_mode = 1
 stretch_mode = 5

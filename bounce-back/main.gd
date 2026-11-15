@@ -1,5 +1,6 @@
 extends Node2D
 signal vsichni_kaktusove_zabiti
+
 var zbyva_kaktusu: int = 0
 var brana_otevrena: bool = false
 
@@ -12,6 +13,10 @@ func _on_kaktus_zabity() -> void:
 
 	if zbyva_kaktusu == 0:
 		brana_otevrena = true
+	if zbyva_kaktusu == 0:
+	
+	if zbyva_kaktusu == 0:
+		brana_otevrena = true	
 		vsichni_kaktusove_zabiti.emit()
 
 
