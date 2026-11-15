@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cd2apsojkm67y" path="res://start.tscn" id="5_kek77"]
 [ext_resource type="AudioStream" uid="uid://by00hrcpv7qhm" path="res://mexican_sound.mp3" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://ku6stj7u16wm" path="res://you_win.png" id="10_4c57u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
 radius = 5.357147
@@ -79,11 +80,27 @@ position = Vector2(679, -349)
 shape = SubResource("RectangleShape2D_xspls")
 
 [node name="WinUI" type="CanvasLayer" parent="." unique_id=1311931148]
+visible = false
 
 [node name="YouWin" type="TextureRect" parent="WinUI" unique_id=1153423289]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_4c57u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="WinUI" unique_id=114180705]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.52906674, 0.5290667, 0.5290667, 0.34509805)
 
 [node name="Spawn2A" type="Marker2D" parent="." unique_id=1479959458]
 position = Vector2(209, -371)
@@ -94,7 +111,7 @@ position = Vector2(386, -315)
 [node name="Spawn2C" type="Marker2D" parent="." unique_id=833886443]
 position = Vector2(273, -332)
 
-[connection signal="body_entered" from="GateZone" to="." method="_on_win_zone_body_entered"]
+[connection signal="body_entered" from="GateZone" to="." method="_on_gate_zone_body_entered"]
 [connection signal="body_entered" from="WinZone" to="." method="_on_win_zone_body_entered"]
 
 [editable path="kkts2"]

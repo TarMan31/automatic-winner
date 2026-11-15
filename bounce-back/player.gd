@@ -35,7 +35,10 @@ func take_damage(amount: int)-> void:
 	zivotyted.value = health
 	if health <= 0:
 		mrtvej.show_death()
-		
+func respawn() -> void:
+	global_position = checkpos
+	health = max_zivoty
+	zivotyted.value = health
 	
 
 

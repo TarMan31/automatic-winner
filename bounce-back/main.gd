@@ -1,5 +1,6 @@
 extends Node2D
 signal vsichni_kaktusove_zabiti
+signal druha_oblast_dokoncena
 
 @export var kaktus_scena: PackedScene
 
@@ -21,27 +22,32 @@ func _on_kaktus_zabity() -> void:
 			vsichni_kaktusove_zabiti.emit()
 		else:
 			druha_oblast_hotova = true
+			druha_oblast_dokoncena.emit()
 
 
-func _on_win_zone_body_entered(body: Node2D) -> void:
+func _on_gate_zone_body_entered(body: Node2D) -> void:
+	print("Gate: ", body.name, " oblast=", oblast, " brana=", brana_otevrena)
 	if not body.is_in_group("player"):
 		return
-
 	if oblast != 1 or not brana_otevrena:
-		return
-	if kaktus_scena == null:
-		push_error("Není nastavená scéna kaktusu!")
 		return
 
 	oblast = 2
 
 	for marker in [$Spawn2A, $Spawn2B, $Spawn2C]:
 		var kaktus = kaktus_scena.instantiate() as CharacterBody2D
-
 		kaktus.position = marker.position
 		kaktus.set("bullet_scene", preload("res://bullet.tscn"))
-
 		add_child(kaktus)
-
 		kaktus.connect("kaktus_zabity", _on_kaktus_zabity)
 		zbyva_kaktusu += 1
+	
+func _on_win_zone_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("player"):
+		return
+	if not druha_oblast_hotova:
+		return
+	$WinUI.show()
+	get_tree().set_deferred("paused", true)
+		
+		
