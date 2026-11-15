@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd2apsojkm67y"]
+
+[ext_resource type="Script" uid="uid://beyxh2u0q6v7b" path="res://start.gd" id="1_ots34"]
+
+[node name="Node2D" type="CanvasLayer" unique_id=1962741572]
+process_mode = 3
+script = ExtResource("1_ots34")
+
+[node name="Button" type="Button" parent="." unique_id=986680638]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "START"
