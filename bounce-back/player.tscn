@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://3ks3gh15thqk" path="res://hat-player.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://bhitgq4dggc2n" path="res://shield_pivot.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cwv2xu1gh0wxp" path="res://stit.png" id="4_hqtel"]
-[ext_resource type="PackedScene" uid="uid://b4imkypyckrsv" path="res://zivoty.tscn" id="5_sweqy"]
-[ext_resource type="PackedScene" uid="uid://8onr0rlwqig6" path="res://deathscreen.tscn" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://b4imkypyckrsv" path="res://zivoty.tscn" id="5_1jxqw"]
 [ext_resource type="AudioStream" uid="uid://cphn24h1pf2r7" path="res://discord_notif.mp3" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://8onr0rlwqig6" path="res://deathscreen.tscn" id="6_2hs0m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dfegk"]
 radius = 15.0
@@ -46,15 +46,6 @@ rotation = 1.5704592
 scale = Vector2(0.81726617, 1.0952322)
 texture = ExtResource("4_hqtel")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=771766479]
-
-[node name="Zivoty" parent="CanvasLayer" unique_id=805787082 instance=ExtResource("5_sweqy")]
-offset_left = 900.0
-offset_top = 20.0
-offset_right = 1100.0
-offset_bottom = 40.0
-
-[node name="deathscreen" parent="." unique_id=1034895485 instance=ExtResource("6_2hs0m")]
 [node name="ShieldBlocker" type="AnimatableBody2D" parent="ShieldPivot/Shield" unique_id=503645464]
 collision_layer = 3
 collision_mask = 0
@@ -64,6 +55,12 @@ sync_to_physics = false
 position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_o1sgd")
 disabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=771766479]
+
+[node name="Zivoty" parent="CanvasLayer" unique_id=805787082 instance=ExtResource("5_1jxqw")]
+
+[node name="deathscreen" parent="." unique_id=1034895485 instance=ExtResource("6_2hs0m")]
 
 [node name="OdrazeniSurikenu" type="AudioStreamPlayer2D" parent="." unique_id=1683769424]
 stream = ExtResource("5_sweqy")
