@@ -46,3 +46,13 @@ func _on_win_zone_body_entered(body: Node2D) -> void:
 
 		kaktus.connect("kaktus_zabity", _on_kaktus_zabity)
 		zbyva_kaktusu += 1
+	
+	if zbyva_kaktusu == 0:
+		brana_otevrena = true	
+		vsichni_kaktusove_zabiti.emit()
+
+
+func _on_win_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and brana_otevrena:
+		$WinUI.show()
+		get_tree().set_deferred("paused", true)

@@ -95,6 +95,27 @@ position = Vector2(386, -315)
 position = Vector2(273, -332)
 
 [connection signal="body_entered" from="GateZone" to="." method="_on_win_zone_body_entered"]
+[node name="WinUI" type="CanvasLayer" parent="." unique_id=1305352859]
+layer = 10
+visible = false
+
+[node name="YouWin" type="TextureRect" parent="WinUI" unique_id=529054343]
+z_index = 3
+offset_right = 1115.0
+offset_bottom = 648.0
+texture = ExtResource("9_kek77")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="WinUI" unique_id=233340588]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5882353, 0.5882353, 0.5882353, 0.6)
+
 [connection signal="body_entered" from="WinZone" to="." method="_on_win_zone_body_entered"]
 
 [editable path="kkts2"]
