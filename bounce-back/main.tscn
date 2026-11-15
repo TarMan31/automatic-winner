@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ytqxs36g85id"]
 
+[ext_resource type="Script" uid="uid://cno2he728mbed" path="res://main.gd" id="1_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dofxdfux0o1sd" path="res://kkts.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c8igyey7o7ye5" path="res://background.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cn1vk2bpqjajd" path="res://player.tscn" id="4_1bvp3"]
@@ -9,12 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
-radius = 4.4642944
-height = 32.142883
-radius = 8.928574
-height = 39.285706
+radius = 5.357147
+height = 25.0
 
 [node name="Main" type="Node2D" unique_id=608802758]
+script = ExtResource("1_5vw27")
 
 [node name="kkts" parent="." unique_id=1608607457 instance=ExtResource("2_0xm2m")]
 position = Vector2(-295, -327)
@@ -26,28 +26,20 @@ position = Vector2(-742, -348)
 [node name="Node2D" parent="." unique_id=1587759662 instance=ExtResource("3_7mycd")]
 
 [node name="kkts2" parent="." unique_id=1973053176 instance=ExtResource("2_0xm2m")]
-position = Vector2(237, -232)
 position = Vector2(-199, -365)
 speed = 150.0
 max_zivoty = 6
 
 [node name="Sprite2D" parent="kkts2" index="0" unique_id=1679437144]
-position = Vector2(221.84375, -156.3125)
+position = Vector2(8.000015, -2)
 texture = ExtResource("4_lquwl")
 
 [node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(222, -150.99998)
-position = Vector2(7.078124, -5.6562505)
-scale = Vector2(0.7050781, 0.7643229)
-texture = ExtResource("4_lquwl")
-
-[node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(7, 3.9999995)
+position = Vector2(8, 3.9999995)
 scale = Vector2(1.12, 0.55999994)
 shape = SubResource("CapsuleShape2D_h2yge")
 
 [node name="kkts3" parent="." unique_id=1834578820 instance=ExtResource("2_0xm2m")]
-position = Vector2(748, -302)
 position = Vector2(-100, -327)
 speed = 100.0
 max_zivoty = 4
