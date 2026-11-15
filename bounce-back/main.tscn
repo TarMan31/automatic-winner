@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cc3idt7xeivcf" path="res://cactuskulatej.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://8i2hu0ohgg6v" path="res://cactusmujskztickou.png" id="5_7mycd"]
 [ext_resource type="AudioStream" uid="uid://by00hrcpv7qhm" path="res://mexican_sound.mp3" id="6_7mycd"]
+[ext_resource type="AudioStream" uid="uid://diph2jp6rlktg" path="res://fortinte_death.mp3" id="7_272bh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2yge"]
-radius = 16.071426
-height = 96.42859
+radius = 4.4642944
+height = 32.142883
 
 [node name="Main" type="Node2D" unique_id=608802758]
 
@@ -23,20 +24,23 @@ position = Vector2(-900, -390)
 [node name="bckrnd" parent="." unique_id=1229267126 instance=ExtResource("3_h2yge")]
 
 [node name="kkts2" parent="." unique_id=1973053176 instance=ExtResource("2_0xm2m")]
-position = Vector2(261, -223)
+position = Vector2(237, -232)
 speed = 150.0
+max_zivoty = 6
 
 [node name="Sprite2D" parent="kkts2" index="0" unique_id=1679437144]
+position = Vector2(221.84375, -156.3125)
 texture = ExtResource("4_lquwl")
 
 [node name="CollisionShape2D" parent="kkts2" index="1" unique_id=272271106]
-position = Vector2(0, 26.999998)
+position = Vector2(222, -150.99998)
 scale = Vector2(1.12, 0.55999994)
 shape = SubResource("CapsuleShape2D_h2yge")
 
 [node name="kkts3" parent="." unique_id=1834578820 instance=ExtResource("2_0xm2m")]
-position = Vector2(434, -234)
+position = Vector2(748, -302)
 speed = 100.0
+max_zivoty = 4
 
 [node name="Sprite2D" parent="kkts3" index="0" unique_id=1679437144]
 texture = ExtResource("5_7mycd")
@@ -48,6 +52,9 @@ wait_time = 0.8
 stream = ExtResource("6_7mycd")
 volume_db = -18.0
 autoplay = true
+
+[node name="EnemyDeathSound" type="AudioStreamPlayer2D" parent="." unique_id=753086451]
+stream = ExtResource("7_272bh")
 
 [editable path="kkts2"]
 [editable path="kkts3"]
