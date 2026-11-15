@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal kaktus_zabity
+
 @export var bullet_scene: PackedScene
 
 @export var speed: float = 50
@@ -66,4 +68,5 @@ func bum_zasah() -> void:
 		var zvuk = get_tree().current_scene.get_node_or_null("EnemyDeathSound")
 		if zvuk:
 			zvuk.play()
+		kaktus_zabity.emit()
 		queue_free()

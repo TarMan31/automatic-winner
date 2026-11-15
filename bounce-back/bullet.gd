@@ -24,7 +24,6 @@ func bounce_back(new_direction: Vector2) -> void:
 	odrazena_strela = true	
 	
 func _on_body_entered(body: Node2D) -> void:
-	print("ZASAH: ", body.name, " | enemy: ", body.is_in_group("enemy"), " | odrazena: ", odrazena_strela)
 	if body.is_in_group("player") and not odrazena_strela:
 		body.take_damage(10)
 		queue_free()
