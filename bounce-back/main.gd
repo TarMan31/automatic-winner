@@ -10,6 +10,7 @@ func _ready() -> void:
 		kaktus.connect("kaktus_zabity", _on_kaktus_zabity)
 func _on_kaktus_zabity() -> void:
 	zbyva_kaktusu -= 1
+	if zbyva_kaktusu == 0:
 	
 	if zbyva_kaktusu == 0:
 		brana_otevrena = true	
